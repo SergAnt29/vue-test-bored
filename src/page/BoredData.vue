@@ -19,14 +19,14 @@
                 <v-tab-item>
                     <v-card flat>
                         <v-card-text>
-                            <div style="display: flex">
+                            <div style="display: flex" class="containerToCard">
                                 <div style="margin: 5px">
                                     <v-textarea
                                             v-model="getActive.activity"
                                             @input="setActive($event, 'activity')"
                                             label="activity"
                                             required
-                                            height="150px"
+                                            height="156px"
                                             color="teal"
                                     ></v-textarea>
                                     <v-btn color="error" style="width: 100%" @click="SAVE()">Save For Later</v-btn>
@@ -64,34 +64,34 @@
                 <v-tab-item>
                     <v-card flat>
                         <v-card-text>
-                            ewqqwe
-                            <v-simple-table>
-                                <template v-slot:default>
-                                    <thead>
-                                    <tr>
-                                        <th class="text-left">activity</th>
-                                        <th class="text-left">type</th>
-                                        <th class="text-left">participants</th>
-                                        <th class="text-left">price</th>
-                                        <th class="text-left">action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr v-for="(item, index) in LIST" :key="index + 323423">
-                                        <td>{{ item.activity }}</td>
-                                        <td>{{ item.type }}</td>
-                                        <td>{{ item.participants }}</td>
-                                        <td>{{ item.price }}</td>
-                                        <td>
-                                            <v-btn color="error" style="width: 100%" @click="deleteFromTable(index)">
-                                               delete
-                                            </v-btn>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </template>
-                            </v-simple-table>
-
+                            <div class="containerToCard">
+                                <v-simple-table>
+                                    <template v-slot:default>
+                                        <thead>
+                                        <tr>
+                                            <th class="text-left">activity</th>
+                                            <th class="text-left">type</th>
+                                            <th class="text-left">participants</th>
+                                            <th class="text-left">price</th>
+                                            <th class="text-left">action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr v-for="(item, index) in LIST" :key="index + 323423">
+                                            <td>{{ item.activity }}</td>
+                                            <td>{{ item.type }}</td>
+                                            <td>{{ item.participants }}</td>
+                                            <td>{{ item.price }}</td>
+                                            <td>
+                                                <v-btn color="error" style="width: 100%" @click="deleteFromTable(index)">
+                                                   delete
+                                                </v-btn>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </template>
+                                </v-simple-table>
+                            </div>
                         </v-card-text>
                         <v-btn color="error" v-if="LIST.length  > 0" style="width: 100%" @click="ClearTable()">
                             clear
@@ -173,5 +173,8 @@
 </script>
 
 <style scoped>
-
+    .containerToCard{
+        width: 860px;
+        height: 400px;
+    }
 </style>
